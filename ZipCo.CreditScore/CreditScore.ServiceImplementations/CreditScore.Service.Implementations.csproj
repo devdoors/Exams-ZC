@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CreditScore.Common\CreditScore.Common.csproj" />
+    <ProjectReference Include="..\CreditScore.DataContracts\CreditScore.Data.Contracts.csproj" />
+    <ProjectReference Include="..\CreditScore.DataImplementations\CreditScore.Data.Implementations.csproj" />
+    <ProjectReference Include="..\CreditScore.Dtos\CreditScore.Dtos.csproj" />
+    <ProjectReference Include="..\CreditScore.Services\CreditScore.Service.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
