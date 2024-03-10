@@ -18,7 +18,7 @@ namespace CreditScore.Service.Implementations
 
         #region Private Properties
 
-            private IValuePointsRef _valuePointsRef;           
+            private readonly IValuePointsRef _valuePointsRef;           
 
             private CreditCalculatorValuePointsRefDto _creditCalculatorValuePointsRef;
 
