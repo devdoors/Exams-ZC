@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CreditScore.Common\CreditScore.Common.csproj" />
     <ProjectReference Include="..\CreditScore.DataContracts\CreditScore.Data.Contracts.csproj" />
-    <ProjectReference Include="..\CreditScore.DataImplementations\CreditScore.Data.Implementations.csproj" />
     <ProjectReference Include="..\CreditScore.Dtos\CreditScore.Dtos.csproj" />
     <ProjectReference Include="..\CreditScore.Services\CreditScore.Service.Contracts.csproj" />
   </ItemGroup>

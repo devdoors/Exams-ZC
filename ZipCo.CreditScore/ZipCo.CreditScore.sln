@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Domains", "CreditScore.Domains\CreditScore.Domains.csproj", "{4696F7DD-A840-4917-9363-672F446A26DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditScore.Domains", "CreditScore.Domains\CreditScore.Domains.csproj", "{4696F7DD-A840-4917-9363-672F446A26DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Service.Contracts", "CreditScore.Services\CreditScore.Service.Contracts.csproj", "{22967DE5-2506-4BDF-8F6E-A16E8095DF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditScore.Service.Contracts", "CreditScore.Services\CreditScore.Service.Contracts.csproj", "{22967DE5-2506-4BDF-8F6E-A16E8095DF9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Service.Tests", "CreditScore.Services.Tests\CreditScore.Service.Tests.csproj", "{40EF3260-AEB7-4857-89CE-D78B4FF40661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditScore.Service.Tests", "CreditScore.Services.Tests\CreditScore.Service.Tests.csproj", "{40EF3260-AEB7-4857-89CE-D78B4FF40661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Service.Implementations", "CreditScore.ServiceImplementations\CreditScore.Service.Implementations.csproj", "{89EEC31F-AF4B-4D13-8819-94C727124F13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditScore.Service.Implementations", "CreditScore.ServiceImplementations\CreditScore.Service.Implementations.csproj", "{89EEC31F-AF4B-4D13-8819-94C727124F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Common", "CreditScore.Common\CreditScore.Common.csproj", "{5C815D28-B82F-4F98-AE8F-F647171A4B31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditScore.Common", "CreditScore.Common\CreditScore.Common.csproj", "{5C815D28-B82F-4F98-AE8F-F647171A4B31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Data.Implementations", "CreditScore.DataImplementations\CreditScore.Data.Implementations.csproj", "{D536CA4A-FE32-4DE0-9871-0BC55AF532D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditScore.Data.Contracts", "CreditScore.DataContracts\CreditScore.Data.Contracts.csproj", "{D7066F4A-A908-4243-8557-2FA1AC66EF00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Data.Contracts", "CreditScore.DataContracts\CreditScore.Data.Contracts.csproj", "{D7066F4A-A908-4243-8557-2FA1AC66EF00}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditScore.Dtos", "CreditScore.Dtos\CreditScore.Dtos.csproj", "{42FC8505-5315-4BF0-8069-217E0975C940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditScore.Dtos", "CreditScore.Dtos\CreditScore.Dtos.csproj", "{42FC8505-5315-4BF0-8069-217E0975C940}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +43,6 @@ Global
 		{5C815D28-B82F-4F98-AE8F-F647171A4B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C815D28-B82F-4F98-AE8F-F647171A4B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C815D28-B82F-4F98-AE8F-F647171A4B31}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D536CA4A-FE32-4DE0-9871-0BC55AF532D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D536CA4A-FE32-4DE0-9871-0BC55AF532D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D536CA4A-FE32-4DE0-9871-0BC55AF532D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D536CA4A-FE32-4DE0-9871-0BC55AF532D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D7066F4A-A908-4243-8557-2FA1AC66EF00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7066F4A-A908-4243-8557-2FA1AC66EF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7066F4A-A908-4243-8557-2FA1AC66EF00}.Release|Any CPU.ActiveCfg = Release|Any CPU

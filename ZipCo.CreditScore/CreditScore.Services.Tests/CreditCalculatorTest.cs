@@ -1,8 +1,10 @@
 using CreditScore.Common;
+using CreditScore.Data.Contracts;
 using CreditScore.Dtos;
 using CreditScore.Service.Contracts;
 using CreditScore.Service.Implementations;
 using CreditScore.Service.Tests.MockDataClasses;
+using Moq;
 
 namespace CreditScore.Service.Tests
 {
@@ -12,28 +14,28 @@ namespace CreditScore.Service.Tests
         ICreditCalculator _creditCalculator;
 
         [TestInitialize]
-        public void TestInitialize()
-        {
-            //---------Create an instance of the service and injected mock objects as depencencies.            
-            var valuePointsRef = new ValuePointsRef(new ReadRangeValuePointsRefDataMock(), new ReadSingleValuePointsRefDataMock());
+        public async Task TestInitialize()
+        {        
+            var mockValues = await GetMockValuesAsync();
+            var mockDependency = new Mock<IValuePointsRef>();
+            mockDependency.Setup(d => d.GetCreditCalculatorValuePointsRefAsync()).Returns(Task.FromResult(mockValues));
 
-            //---------Pass the explicitly created service as a parameter to mock dependecies
-            _creditCalculator = new CreditCalculator(valuePointsRef);
+            _creditCalculator = new CreditCalculator(mockDependency.Object);
         }
 
 
         [TestMethod]
         public async Task CalculateCredit_WithAllGivenValues_CorrectAvailableCreditsOf400()
         {
-            //Arrange 
+            //Arrange                         
             decimal expectedCredit = 400;
 
             var bureauScore = 750;
             var missedPaymentCount = 1;
             var completedPaymentCount = 4;
             var ageInYears = 29;
-            var customer = new CustomerDto(bureauScore, missedPaymentCount, completedPaymentCount, ageInYears);            
-
+            var customer = new CustomerDto(bureauScore, missedPaymentCount, completedPaymentCount, ageInYears);
+            
             //Act
             var credit = await _creditCalculator.CalculateCredit(customer);
 
@@ -314,5 +316,33 @@ namespace CreditScore.Service.Tests
             //Act
             await _creditCalculator.CalculateCredit(null);            
         }
+
+
+        #region Private Methods
+
+            private async Task<CreditCalculatorValuePointsRefDto> GetMockValuesAsync()
+            { 
+                IReadRangeValuePointsRefData readRangeValuePointsRefData = new ReadRangeValuePointsRefDataMock();
+                IReadSingleValuePointsRefData readSingleValuePointsRefData = new ReadSingleValuePointsRefDataMock();
+
+                var creditScores = await readRangeValuePointsRefData.GetCreditScoreAsync();
+                var missedPayments = await readSingleValuePointsRefData.GetMissedPaymentsAsync();
+                var completedPayments = await readSingleValuePointsRefData.GetCompletedPaymentsAsync();
+                var ageCapScores = await readRangeValuePointsRefData.GetAgeCapScoresAsync();
+                var avaliableCreditScores = await readSingleValuePointsRefData.GetAvaliableCreditScoresAsync();
+
+                var mockValues = new CreditCalculatorValuePointsRefDto()
+                {
+                    CreditScores = creditScores.RangeValuePointsRefToDtos(),
+                    MissedPayments = missedPayments.SingleValuePointsRefToDtos(),
+                    CompletedPayments = completedPayments.SingleValuePointsRefToDtos(),
+                    AgeCapScores = ageCapScores.RangeValuePointsRefToDtos(),
+                    AvaliableCreditScores = avaliableCreditScores.SingleValuePointsRefToDtos()
+                };
+
+                return mockValues;
+            }
+
+        #endregion
     }
 }

@@ -1,6 +1,5 @@
 ﻿using CreditScore.Common;
 using CreditScore.Data.Contracts;
-using CreditScore.Data.Implementations;
 using CreditScore.Dtos;
 using CreditScore.Service.Contracts;
 
@@ -15,13 +14,7 @@ namespace CreditScore.Service.Implementations
             { 
                 _readRangeValuePointsRefData = readRangeValuePointsRefData;
                 _readSingleValuePointsRefData = readSingleValuePointsRefData;
-            }
-            
-            /// <summary>
-            /// This pattern temporarily handles IOC instead of setting up a full start up class.             
-            /// Note: Once a start up is created, this constructor can be removed. 
-            /// </summary>
-            public ValuePointsRef(): this (new ReadRangeValuePointsRefData(), new ReadSingleValuePointsRefData()) {}
+            }             
 
         #endregion
 

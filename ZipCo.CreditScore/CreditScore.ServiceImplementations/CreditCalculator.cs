@@ -13,13 +13,6 @@ namespace CreditScore.Service.Implementations
                 _valuePointsRef = valuePointsRef;                     
             }
 
-
-            /// <summary>
-            /// This pattern temporarily handles IOC instead of setting up a full start up class.             
-            /// Note: Once a start up is created, this constructor can be removed. 
-            /// </summary>
-            public CreditCalculator(): this(new ValuePointsRef()) { }
-
         #endregion
 
 
