@@ -57,7 +57,7 @@ namespace CreditScore.Service.Tests
             //var mockCreditScores = 1;
             //var mockCreditScores = 1;
             //var mockCreditScores = 1;
-            _creditScore.Setup(d => d.GetCreditScore(bureauScore)).Returns(mockCreditScores);
+            _creditScore.Setup(d => d.GetCreditScore(bureauScore)).Returns(Task.FromResult(mockCreditScores));
             _creditCalculator = new CreditCalculator(_valuePointsRef.Object, _creditScore.Object, _missedPayments.Object, _completedPaymets.Object, _ageCapScore.Object, _availableCredit.Object);
 
             //Act
